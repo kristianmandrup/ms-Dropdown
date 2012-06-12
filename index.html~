@@ -5,20 +5,23 @@
 <title>Image Dropdown</title>
 <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
 <script type="text/javascript" src="msdropdown/js/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="msdropdown/js/uncompressed.jquery.dd.js"></script>
+<script type="text/javascript" src="msdropdown/js/jquery.dd.js"></script>
+<script type="text/javascript" src="msdropdown/js/test.js"></script>
 <style type="text/css">
-.toplinks {font-family:Arial, Helvetica, sans-serif;
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background-color: #fff;
+	color:#777;
+}
+.toplinks{	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	background-color: #777777;
 	color:#fff;
-	border-bottom:2px solid #c3c3c3;
-	margin-bottom:10px;
-	padding-bottom:10px;
 }
 .toplinks a, .toplinks a :visited{color:#FFF;}
 .small{font-size:10px; line-height:12px; color:#006; font-weight:normal; font-family:Arial, Helvetica, sans-serif; position:relative; top:-10px}
-
-</style>
+</style>	
 </head>
 <body>
 
@@ -26,54 +29,41 @@
   <tr>
     <td width="11%"><strong><a href="normal.html">Simple</a></strong></td>
     <td width="16%"><a href="cssSprite.html"><strong>CSS Sprite</strong></a></td>
-    <td width="18%"><a href="multipleSkin.html"><strong>Multiple Skin</strong></a></td>
+    <td width="18%"><a href="multipleSkin.html"><strong>Multiple skin</strong></a></td>
     <td width="17%"><a href="objectOriented.html"><strong>Object Oriented Approch</strong></a></td>
     <td width="18%"><a href="ajax-main.html"><strong>Ajax Call</strong></a></td>
     <td width="20%"><a href="mouse-events.html"><strong>Mouse Events</strong></a></td>
   </tr>
 </table>
-<form name="myform" id="myform"   action="getvalue.php" enctype="multipart/form-data" method="post">
-  <h1>Javascript image dropdown <span id="ver"></span> <a class="small" href="http://www.marghoobsuleman.com/jquery-image-dropdown" title="Download">Download</a> </h1>
-  <p>
-    <select name="websites1" id="websites1" style="width:200px;" >
-      <option class="calendar" value="calendar">Calendar</option>
-      <option class="shoppingcart" value="shopping_cart">Shopping Cart</option>
-      <option class="cd" value="cd">CD</option>
-      <option class="email" value="email">Email</option>
-      <option class="faq" value="faq">FAQ</option>
-      <option class="games" value="games">Games</option>
-      <option class="music" value="music">Music</option>
-      <option class="phone" value="phone">Phone</option>
-      <option class="graph" value="graph">Graph</option>
-      <option class="secured" value="secured">Secured</option>
-      <option class="video" value="video">Video</option>
-    </select>
-  </p>
-  <p>
-    <br />
-    <br />
-<input type="submit" value="Submit Value" />
-    <br />
-  </p>
-</form>
-<script language="javascript" type="text/javascript">
+<p>&nbsp;</p>
+<br /><br />
+<h1>Javascript image dropdown <span id="ver"></span> <a class="small" href="http://www.marghoobsuleman.com/jquery-image-dropdown" title="Download">Download</a> </h1>
+<br />
+<select name="websites2" id="websites2" style="width:258px;" tabindex="1">
+  <option name="one" value="msDropDown" selected="selected" title="images/icon-ok.gif">msDropDown</option>
+  <option  name="two" value="PrototypeCombobox" title="images/icon-ok.gif">Prototype Combobox</option>
+  <option value="jQuery Tabs" title="images/icon-ok.gif">jQuery Tabs</option>
+  <option value="Common Accordion" title="images/icon-ok.gif">Common Accordion</option>
+</select><br />
+<br />
+<br />
 
-function showvalue(arg) {
-	alert(arg);
-	//arg.visible(false);
-}
-var oHandler;
+
+<br />
+<br />
+
+<script type="text/javascript">
 $(document).ready(function() {
 
 try {
-		//$("body select").msDropDown();
-		oHandler = $("#websites1").msDropDown({useSprite:'sprite'}).data("dd");
+		oHandler = $("#websites2").msDropDown({mainCSS:'dd2'}).data("dd");
+		//alert($.msDropDown.version);
+		//$.msDropDown.create("body select");
 		$("#ver").html($.msDropDown.version);
 		} catch(e) {
 			alert("Error: "+e.message);
 		}
 })
-		
 
 </script>
 

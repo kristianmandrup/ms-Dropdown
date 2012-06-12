@@ -8,14 +8,14 @@
 // msDropDown is free jQuery Plugin: you can redistribute it and/or modify
 // it under the terms of the either the MIT License or the Gnu General Public License (GPL) Version 2
 */
-;(function($) { 
+(function($) { 
 		   
    var msOldDiv = ""; 
    var dd = function(element, options)
    {
 		var sElement = element;
 		var $this =  this; //parent this
-		var options = $.extend({
+		options = $.extend({
 			height:120,
 			visibleRows:7,
 			rowHeight:23,
@@ -28,7 +28,7 @@
 			jsonTitle:true,
 			style:''
 		}, options);
-		this.ddProp = new Object();//storing propeties;
+		this.ddProp = {};//storing propeties;
 		var oldSelectedValue = "";
 		var actionSettings ={};
 		actionSettings.insideWindow = true;
@@ -36,20 +36,20 @@
 		actionSettings.currentKey = null;
 		var ddList = false;
 		var config = {postElementHolder:'_msddHolder', postID:'_msdd', postTitleID:'_title',postTitleTextID:'_titletext',postChildID:'_child',postAID:'_msa',postOPTAID:'_msopta',postInputID:'_msinput', postArrowID:'_arrow', postInputhidden:'_inp'};
-		var styles = {dd:options.mainCSS, ddTitle:'ddTitle', arrow:'arrow', ddChild:'ddChild', ddTitleText:'ddTitleText', disabled:.30, ddOutOfVision:'ddOutOfVision', borderTop:'borderTop', noBorderTop:'noBorderTop', selected:'selected'};
+		var styles = {dd:options.mainCSS, ddTitle:'ddTitle', arrow:'arrow', ddChild:'ddChild', ddTitleText:'ddTitleText', disabled:0.30, ddOutOfVision:'ddOutOfVision', borderTop:'borderTop', noBorderTop:'noBorderTop', selected:'selected'};
 		var attributes = {actions:"focus,blur,change,click,dblclick,mousedown,mouseup,mouseover,mousemove,mouseout,keypress,keydown,keyup", prop:"size,multiple,disabled,tabindex"};
-		this.onActions = new Object();
+		this.onActions = {};
 		var elementid = $(sElement).prop("id");
 		if(typeof(elementid)=="undefined" || elementid.length<=0) {
 			//assign and id;
 			elementid = "msdrpdd"+$.msDropDown.counter++;//I guess it makes unique for the page.
 			$(sElement).attr("id", elementid);
-		};
+		}
 		var inlineCSS = $(sElement).prop("style");
-		options.style += (inlineCSS==undefined) ? "" : inlineCSS;
+		options.style += (inlineCSS===undefined) ? "" : inlineCSS;
 		var allOptions = $(sElement).children();
-		ddList = ($(sElement).prop("size")>1 || $(sElement).prop("multiple")==true) ? true : false;
-		if(ddList) {options.visibleRows = $(sElement).prop("size");};
+		ddList = ($(sElement).prop("size")>1 || $(sElement).prop("multiple")===true) ? true : false;
+		if(ddList) {options.visibleRows = $(sElement).prop("size");}
 		var a_array = {};//stores id, html & value etc
 		var currentP = 0;
 		var isFilter = false;

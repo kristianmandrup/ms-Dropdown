@@ -4,11 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Image Dropdown</title>
 <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-<script type="text/javascript" src="msdropdown/js/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="msdropdown/js/jquery.dd.min.js"></script>
+<script type="text/javascript" src="msdropdown/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="msdropdown/js/jquery.dd.js"></script>
 <style type="text/css">
-.toplinks{	font-family:Arial, Helvetica, sans-serif;
+.toplinks {font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	background-color: #777777;
 	color:#fff;
@@ -18,17 +17,15 @@
 }
 .toplinks a, .toplinks a :visited{color:#FFF;}
 .small{font-size:10px; line-height:12px; color:#006; font-weight:normal; font-family:Arial, Helvetica, sans-serif; position:relative; top:-10px}
-
 </style>
 </head>
 <body>
-
 
 <table width="100%" border="0" cellspacing="0" cellpadding="5" class="toplinks">
   <tr>
     <td width="11%"><strong><a href="normal.html">Simple</a></strong></td>
     <td width="16%"><a href="cssSprite.html"><strong>CSS Sprite</strong></a></td>
-    <td width="18%"><a href="multipleSkin.html"><strong>Multiple Skin</strong></a></td>
+    <td width="18%"><a href="multipleSkin.html"><strong>Multiple skin</strong></a></td>
     <td width="17%"><a href="objectOriented.html"><strong>Object Oriented Approch</strong></a></td>
     <td width="18%"><a href="ajax-main.html"><strong>Ajax Call</strong></a></td>
     <td width="20%"><a href="mouse-events.html"><strong>Mouse Events</strong></a></td>
@@ -36,9 +33,8 @@
 </table>
 <form name="myform" id="myform"  action="getvalue.php" enctype="multipart/form-data" method="post">
   <h1>Javascript image dropdown <span id="ver"></span> <a class="small" href="http://www.marghoobsuleman.com/jquery-image-dropdown" title="Download">Download</a> </h1>
- 
   <p>
-  <select style="width:200px" class="mydds" name="myimge">
+    <select name="websites3" id="websites3" style="width:200px;">
       <option value="calendar" selected="selected" title="icons/icon_calendar.gif">Calendar</option>
       <option value="shopping_cart" title="icons/icon_cart.gif">Shopping Cart</option>
       <option value="cd" title="icons/icon_cd.gif">CD</option>
@@ -50,30 +46,24 @@
       <option value="graph" title="icons/icon_sales.gif">Graph</option>
       <option value="secured" title="icons/icon_secure.gif">Secured</option>
       <option value="video" title="icons/icon_video.gif">Video</option>
-    </select>
-   <br />
-    <br />
-  </p>
-   <p id="dpholder" >
-   <h3>With title: used json style in title attribute. ie: title="{image:'icons/icon_cart.gif', title:'Shopping Cart'}" </h3>
-    <select style="width:200px" class="mydds" name="myimge2">
-      <option value="calendar" selected="selected" title="{image:'icons/icon_calendar.gif', title:'Calendar'}">Calendar</option>
-      <option value="shopping_cart" title="{image:'icons/icon_cart.gif', title:'Shopping Cart'}">Shopping Cart</option>
-      <option value="cd" title="{image:'icons/icon_cd.gif', title:'CD'}">CD</option>
-      <option value="email" title="{image:'icons/icon_email.gif', title:'Email'}">Email</option>
-      <option value="faq" title="{image:'icons/icon_faq.gif', title:'FAQ'}">FAQ</option>
-      <option value="games" title="{image:'icons/icon_games.gif', title:'Games'}">Games</option>
-      <option value="music" title="{image:'icons/icon_music.gif', title:'Music'}">Music</option>
-      <option value="phone" title="{image:'icons/icon_phone.gif', title:'Phone'}">Phone</option>
-      <option value="graph" title="{image:'icons/icon_sales.gif', title:'Graph'}">Graph</option>
-      <option value="secured" title="{image:'icons/icon_secure.gif', title:'Secured'}">Secured</option>
-      <option value="video" title="{image:'icons/icon_video.gif', title:'Video'}">Video</option>
     </select> 
     <br />
     <br />
   </p>
-  <p style="clear:both">
+  <p><br />
+<br />
+<select name="websites2" id="websites2" style="width:258px;">
+  <option name="one" value="msDropDown" selected="selected" title="images/icon-ok.gif">msDropDown</option>
+  <option  name="two" value="PrototypeCombobox" title="images/icon-ok.gif">Prototype Combobox</option>
+  <option value="jQuery Tabs" title="images/icon-ok.gif">jQuery Tabs</option>
+  <option value="Common Accordion" title="images/icon-ok.gif">Common Accordion</option>
+</select><br />
+<br />
+
+  </p>
+  <p>
     <input type="submit" value="Submit Value" />
+    <br />
   </p>
 </form>
 <script language="javascript" type="text/javascript">
@@ -83,24 +73,26 @@ function showvalue(arg) {
 	//arg.visible(false);
 }
 
-
 $(document).ready(function() {
-
+$("#websites3").msDropDown();
+		$("#websites2").msDropDown({mainCSS:'dd2'});
+		//alert($.msDropDown.version);
+		//$.msDropDown.create("body select");
+		$("#ver").html($.msDropDown.version);
+/*
 try {
-		oHandler = $(".mydds").msDropDown().data("dd");
-		//oHandler.visible(true);
+		$("#websites3").msDropDown();
+		$("#websites2").msDropDown({mainCSS:'dd2'});
 		//alert($.msDropDown.version);
 		//$.msDropDown.create("body select");
 		$("#ver").html($.msDropDown.version);
 		} catch(e) {
 			alert("Error: "+e.message);
 		}
-})
-/*
-$(document).bind("keydown", function() {
-	console.log("document keydown");
-})
 */
+})
+		
+
 </script>
                <div class="node-links" style="padding:10px; border:1px solid #c3c3c3;background:#222222; margin-top:40px">
               <div class="adsense">
@@ -112,7 +104,7 @@ $(document).bind("keydown", function() {
             google_ad_height = 15;
             //-->
             </script>
-                <!--script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script-->
+<!--script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script-->
               </div>
             </div>
 

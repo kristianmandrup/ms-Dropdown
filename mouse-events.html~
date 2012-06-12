@@ -56,8 +56,8 @@ body{
         </tr>
         <tr>
           <td align="center" bgcolor="#f2f2f2"><div id="mainHolder" style="width:500px; background-color:#CCCCCC">
-              <input type="button" name="designView" id="designView" value="Design view" onClick="$('#designhtml').show();$('#codehtml').hide();" style="width:100px; margin:10px" />
-              <input type="button" name="codeView" id="codeView" value="Code view" onClick="$('#designhtml').hide();$('#codes').text($('#designhtml').html());$('#codehtml').show();" style="width:100px; margin:10px" />
+              <input type="button" name="designView" id="designView" value="Desing View" onClick="$('#designhtml').show();$('#codehtml').hide();" style="width:100px; margin:10px" />
+              <input type="button" name="codeView" id="codeView" value="Code View" onClick="$('#designhtml').hide();$('#codes').text($('#designhtml').html());$('#codehtml').show();" style="width:100px; margin:10px" />
               <input type="button" name="convertBtn" id="convertBtn" value="Convert to image dropdown" onClick="convertNow('#designhtml select')" style="margin:10px" />
               <div id="codehtml" class="hidden" style="height:500px; overflow:auto; border:1px solid #c3c3c3; width:500px; background-color:#FFFFFF">
                 <pre id="codes" style="overflow:auto">

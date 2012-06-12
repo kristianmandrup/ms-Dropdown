@@ -4,9 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Image Dropdown</title>
 <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
-<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
 <script type="text/javascript" src="msdropdown/js/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="msdropdown/js/jquery.dd.min.js"></script>
+<script type="text/javascript" src="msdropdown/js/uncompressed.jquery.dd.js"></script>
 <style type="text/css">
 .toplinks{	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
@@ -20,6 +19,8 @@
 .small{font-size:10px; line-height:12px; color:#006; font-weight:normal; font-family:Arial, Helvetica, sans-serif; position:relative; top:-10px}
 
 </style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
   <tr>
     <td width="11%"><strong><a href="normal.html">Simple</a></strong></td>
     <td width="16%"><a href="cssSprite.html"><strong>CSS Sprite</strong></a></td>
-    <td width="18%"><a href="multipleSkin.html"><strong>Multiple Skin</strong></a></td>
+    <td width="18%"><a href="multipleSkin.html"><strong>Multiple skin</strong></a></td>
     <td width="17%"><a href="objectOriented.html"><strong>Object Oriented Approch</strong></a></td>
     <td width="18%"><a href="ajax-main.html"><strong>Ajax Call</strong></a></td>
     <td width="20%"><a href="mouse-events.html"><strong>Mouse Events</strong></a></td>
@@ -56,7 +57,7 @@
   </p>
    <p id="dpholder" >
    <h3>With title: used json style in title attribute. ie: title="{image:'icons/icon_cart.gif', title:'Shopping Cart'}" </h3>
-    <select style="width:200px" class="mydds" name="myimge2">
+    <select style="width:200px" class="mydds" name="myimge">
       <option value="calendar" selected="selected" title="{image:'icons/icon_calendar.gif', title:'Calendar'}">Calendar</option>
       <option value="shopping_cart" title="{image:'icons/icon_cart.gif', title:'Shopping Cart'}">Shopping Cart</option>
       <option value="cd" title="{image:'icons/icon_cd.gif', title:'CD'}">CD</option>
@@ -75,6 +76,14 @@
   <p style="clear:both">
     <input type="submit" value="Submit Value" />
   </p>
+  
+  
+  <div style="border:1px solid #c3c3c3; padding:50px; width:200px; background:#fff" id="draggable">
+  	Used jQuery UI -  Drag me
+  </div>
+  
+  
+  
 </form>
 <script language="javascript" type="text/javascript">
 
@@ -95,12 +104,14 @@ try {
 		} catch(e) {
 			alert("Error: "+e.message);
 		}
+	$( "#draggable" ).draggable();		
 })
 /*
 $(document).bind("keydown", function() {
 	console.log("document keydown");
 })
 */
+
 </script>
                <div class="node-links" style="padding:10px; border:1px solid #c3c3c3;background:#222222; margin-top:40px">
               <div class="adsense">
